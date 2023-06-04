@@ -10,16 +10,16 @@ export default function Home()
     const [elements,setElements]=useState([]);
 
     useEffect(()=>{
-        setElements(()=>{
+        setElements(()=>(
             books.map((val)=>(
                 <Books key={val.key} title={val.title} author={val.author} description={val.description} image={val.image} publisher={val.publisher}/>
             ))
-        })
+        ))
     },[elements,books])
 
     const handleClick=(event)=>{
         // event.preventDefault();
-        axios.get("https://www.googleapis.com/books/v1/volumes?q="+search+"&key=AIzaSyD9tZWE5fab2uJCgcDfgiwkzQxXCvtl8p0&maxResults=5")
+        axios.get("https://www.googleapis.com/books/v1/volumes?q="+search+"&key=AIzaSyD9tZWE5fab2uJCgcDfgiwkzQxXCvtl8p0&maxResults=40")
         .then(value=>{
             setBooks(()=>{
                 const data=value.data.items;
@@ -113,13 +113,13 @@ function Books(props)
 {
     return(
             <div className="books-display-container">
-                <div className="display-container-pic">
-                    <img src={props.image} alt={props.title} width="20px"/>
+                <div className="display-container-pic-box">
+                    <img src={props.image} alt={props.title} className="display-container-pic"/>
                 </div>
                 <div className="description-box">
                     <h1>{props.title}</h1>
                     <h2>Author:{props.author}</h2>
-                    <h2>Publisher:{props.publisher}</h2>
+                    <h2>Publisher:{props.publisher==undefined || props.publisher==""?"Unknown":props.publisher}</h2>
                     <p>{props.description}</p>
                 </div>
             </div>

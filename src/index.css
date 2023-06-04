@@ -220,30 +220,51 @@ nav a.active
 
 .books-shelf
 {
+      padding-left: 20px;
+      padding-right: 20px;
       display:grid;
       grid-template-columns: 1fr 1fr;
-      column-gap: 20px;
-      row-gap: 10px;
+      column-gap: 100px;
+      row-gap: 700px;
       margin-top: 40px;
       z-index: 5;
 }
 
 .books-display-container
 {
+      display:grid;
+      grid-template-columns: 200px 1fr;
+      padding-left: 25px;
+      padding-right: 25px;
       height:50px;
+}
+
+.display-container-pic-box
+{
+      height:350px;
+      width:150px;
+}
+
+.display-container-pic
+{
+      height:300px;
+      padding-top: 25px;
+      padding-top: 25px;
+      width:150px;
+      border-radius: 8px;
 }
 
 .books-display-container h1
 {
-      font-size: 3px;
+      font-size: 10px;
 }
 
 .books-display-container h2
 {
-      font-size: 3px;
+      font-size: 10px;
 }
 
 .books-display-container p
 {
-      font-size: 3px;
+      font-size: 10px;
 }
